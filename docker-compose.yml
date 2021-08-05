@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: "./api"
+      dockerfile: "Dockerfile"
+  web:
+    environment:
+      VIRTUAL_HOST: localhost
+    build:
+      context: "./web"
+      dockerfile: "Dockerfile"
+    expose:
+      - 80
+networks:
+  default:
+    external: true
+    name: env-proxy
