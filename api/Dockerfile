@@ -4,6 +4,7 @@ WORKDIR /usr/app
 COPY ./ /usr/app/
 
 RUN yarn install
+RUN yarn build
 
 EXPOSE 3001
 
