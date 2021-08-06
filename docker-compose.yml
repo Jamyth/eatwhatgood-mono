@@ -2,15 +2,12 @@ version: "3"
 
 services:
   api:
-    build:
-      context: "./api"
-      dockerfile: "Dockerfile"
+    image: "jamyth0712/eatwhatgood-backend"
+    expose: 3001
   web:
     environment:
-      VIRTUAL_HOST: localhost
-    build:
-      context: "./web"
-      dockerfile: "Dockerfile"
+      VIRTUAL_HOST: eatwhatgood.jamyth.com
+    image: "jamyth0712/eatwhatgood-frontend"
     expose:
       - 80
 networks:
